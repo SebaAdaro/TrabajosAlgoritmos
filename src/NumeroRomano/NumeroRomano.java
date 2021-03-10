@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class NumeroRomano {
     public static void main(String[] args) {
         NumeroRomano numero = new NumeroRomano();
-        String a = "";
+        String a = "CD";
         System.out.println(numero.pasarArray(a));
     }
 
     public int pasarArray(String romanos) {
         ArrayList<Character> letras = new ArrayList<>();
         ArrayList<Integer> numeros = new ArrayList<>();
-        romanos.toLowerCase();
+        romanos = romanos.toLowerCase();
         for (int i = 0; i < romanos.length(); i++) {
             letras.add(romanos.charAt(i));
         }
