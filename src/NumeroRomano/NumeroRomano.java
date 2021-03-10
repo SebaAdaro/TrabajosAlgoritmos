@@ -61,11 +61,19 @@ public class NumeroRomano {
                 numeros.add(1000);
             }
         }
-        int b = 0;
+        int suma = 0;
+        int suma1 = 0;
         for (int i = 0; i < numeros.size(); i++) {
-            b += numeros.get(i);
+            suma += numeros.get(i);
         }
-        return b;
+        for (int i = 0; i < numeros.size(); i++) {
+            for (int j = i+1; j < numeros.size(); j++) {
+                if (numeros.get(j) > numeros.get(i)){
+                    suma1 = (-numeros.get(i));
+                }
+            }
+        }
+        return suma + 2*suma1 ;
     }
 
     public int search(ArrayList<Character> a, Character k) {
