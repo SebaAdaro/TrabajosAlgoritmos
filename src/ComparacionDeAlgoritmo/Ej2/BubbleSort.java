@@ -7,7 +7,7 @@ public class BubbleSort {
         int var2;
 
         for (int i = 0; i < myArray.length; i++) {
-            for (int j = i + 1; j < myArray.length - 1; j++) {
+            for (int j = i + 1; j < myArray.length; j++) {
                 if (myArray[j] < myArray[i]) {
                     var1 = myArray[i];
                     var2 = myArray[j];
@@ -28,7 +28,7 @@ public class BubbleSort {
 
     public static void main(String args[]) {
         BubbleSort ob = new BubbleSort();
-        int array[] = {64, 34, 25, 12, 22, 11, 90};
+        int array[] = {64, 34, 25, 12, 22, 90, 11, 11, 12, 34};
         array = ob.bubbleSort(array);
         System.out.println("Sorted array");
         ob.printArray(array);
