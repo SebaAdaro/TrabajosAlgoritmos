@@ -36,7 +36,7 @@ public class NumeroRomano {
             throw new RuntimeException("No existe un numero romano con mas de 1 'D'");
         }
         if (search(letter, 'm') > 1) {
-            throw new RuntimeException("El maximo de numeros al que llegamos es a 999");
+            throw new RuntimeException("El maximo de numeros al que llegamos es a.txt 999");
         }
 
         for (int i = 0; i < letter.size(); i++) {
