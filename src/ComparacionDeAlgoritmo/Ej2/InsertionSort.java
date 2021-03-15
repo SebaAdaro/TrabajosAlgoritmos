@@ -18,7 +18,7 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             String aux = a[i];
-            while((pos > 0) && (a[pos-1].compareTo(aux) > 0)){
+            while((pos > 0) && (a[pos-1].compareTo(aux) < 0)){
                 a[pos] = a[pos-1];
                 pos--;
             }
@@ -30,7 +30,7 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             T aux = a[i];
-            while((pos > 0) && (a[pos-1].compareTo(aux) > 0)){
+            while((pos > 0) && (a[pos-1].compareTo(aux) < 0)){
                 a[pos] = a[pos-1];
                 pos--;
             }
