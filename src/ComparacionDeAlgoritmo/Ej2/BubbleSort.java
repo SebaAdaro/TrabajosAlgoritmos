@@ -1,33 +1,28 @@
 package ComparacionDeAlgoritmo.Ej2;
 
-public class BubbleSort {
-    void bubbleSort(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n - 1; i++)
-            for (int j = 0; j < n - i - 1; j++)
-                if (arr[j] > arr[j + 1]) {
-                    // swap arr[j+1] and arr[j]
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+public class BubbleSort<T extends Comparable<? super T>> {
+    void bubbleSort(T[] array)
+    {
+        int n = array.length;
+        while (n > 0)
+        {
+            int lastModifiedIndex = 0;
+            for (int currentIndex = 1; currentIndex < n; currentIndex++)
+            {
+                // if the item at the previous index is greater than the item at the `currentIndex`, swap them
+                if (array[currentIndex - 1].compareTo(array[currentIndex]) > 0)
+                {
+                    // swap
+                    T temp = array[currentIndex - 1];
+                    array[currentIndex - 1] = array[currentIndex];
+                    array[currentIndex] = temp;
+                    // save the index that was modified
+                    lastModifiedIndex = currentIndex;
                 }
+            }
+            // save the last modified index so we know not to iterate past it since all proceeding values are sorted
+            n = lastModifiedIndex;
+        }
     }
-
-    /* Prints the array */
-    void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
-    // Driver method to test above
-    public static void main(String args[]) {
-        BubbleSort ob = new BubbleSort();
-        int arr[] = {64, 34, 25, 12, 22, 11, 90};
-        ob.bubbleSort(arr);
-        System.out.println("Sorted array");
-        ob.printArray(arr);
-    }
-
 }
+
