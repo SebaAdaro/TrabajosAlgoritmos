@@ -37,6 +37,8 @@ Algoritmo de Insercion
 El método de ordenación por inserción consiste en recorrer el array comenzando desde el segundo elemento hasta el final.
 Para cada elemento, se lo coloca en el lugar correcto entre todos los elementos anteriores a él, o sea, entre los elementos a su izquierda en el array.
 
+d)Temas afines:
+
 
 Another Example:
 12, 11, 13, 5, 6
