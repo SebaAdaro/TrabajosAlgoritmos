@@ -1,4 +1,4 @@
-Describir los algoritmos de selección, inserción, burbujeo.
+Describir los algoritmos de selección, inserción, burbujeo..
 
 Burbujeo el algoritmo de burbujeo lo que hace es agarra el primer y segundo numero del arreglo. Si el segundo es menor al
 primero los cambia de lugar, luego lo mismo con el segundo y tercer numero etc hasta llegar hasta el ultimo del arreglo.
