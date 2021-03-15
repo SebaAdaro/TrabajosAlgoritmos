@@ -1,22 +1,35 @@
 package ComparacionDeAlgoritmo.Ej2;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class SelectionSort{
+public class SelectionSort {
 
-    ArrayList<Integer> arrayList = new ArrayList();
-
-    public int SeqSearch(ArrayList arrayList, int k) {
-        for (int i = 0; i < arrayList.size(); i++)
-            if (arrayList.get(i).equals(k))
-                return i;
-        return -1;
-    }
-
-    public void sort(ArrayList arrayList1){
-        for (int i = 0; i < arrayList1.size(); i++) {
-            arrayList1.get(i);
+    public static void sort(List<Integer> arrayList) {
+        int min;
+        int place;
+        for (int i = 0; i < arrayList.size(); i++) {
+            min = arrayList.get(i);
+            place = i;
+            for (int j = i + 1; j < arrayList.size(); j++) {
+                Integer tempValue = arrayList.get(j);
+                if (min > tempValue) {
+                    min = tempValue;
+                    place = j;
+                }
+            }
+            arrayList.set(place, arrayList.get(i));
+            arrayList.set(i, min);
         }
-
     }
+
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(3, 2, 7, 1, 2, 2, 3, 0, -1, 6, 8);
+        System.out.println("Old");
+        list.forEach(System.out::println);
+        SelectionSort.sort(list);
+        System.out.println("New");
+        list.forEach(System.out::println);
+    }
+
 }
