@@ -2,11 +2,9 @@ package ComparacionDeAlgoritmo.Ej2;
 
 public class InsertionSort<T extends Comparable<? super T>> {
 
-    void insertionSort(T[] array)
-    {
+    void insertionSort(T[] array) {
         // start at the first index and iterate through to the end
-        for (int i = 1; i < array.length; i++)
-        {
+        for (int i = 1; i < array.length; i++) {
             int currentIndex = i;
             /*
              * Check:
@@ -15,8 +13,7 @@ public class InsertionSort<T extends Comparable<? super T>> {
              *
              * If both conditions are met, swap the indexes
              */
-            while (currentIndex > 0 && array[currentIndex - 1].compareTo(array[currentIndex]) > 0)
-            {
+            while (currentIndex > 0 && array[currentIndex - 1].compareTo(array[currentIndex]) > 0) {
                 T temp = array[currentIndex];
                 array[currentIndex] = array[currentIndex - 1];
                 array[currentIndex - 1] = temp;
