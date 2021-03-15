@@ -32,4 +32,6 @@ public class SelectionSort {
         list.forEach(System.out::println);
     }
 
+    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 }
