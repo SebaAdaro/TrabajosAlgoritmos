@@ -1,23 +1,19 @@
 package ComparacionDeAlgoritmo.Ej2;
 
-public class BubbleSort<T extends Comparable<? super T>> {
-    void bubbleSort(T[] array) {
-        int n = array.length;
-        while (n > 0) {
-            int lastModifiedIndex = 0;
-            for (int currentIndex = 1; currentIndex < n; currentIndex++) {
-                // if the item at the previous index is greater than the item at the `currentIndex`, swap them
-                if (array[currentIndex - 1].compareTo(array[currentIndex]) > 0) {
-                    // swap
-                    T temp = array[currentIndex - 1];
-                    array[currentIndex - 1] = array[currentIndex];
-                    array[currentIndex] = temp;
-                    // save the index that was modified
-                    lastModifiedIndex = currentIndex;
+public class BubbleSort {
+
+    public void sort(int[] myArray){
+        int var1 = 0;
+        int var2 = 0;
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = i+1; j < myArray.length-1; j++) {
+                if (myArray[j] < myArray[i]){
+                    myArray[j] = var1;
+                    myArray[i] = var2;
+                    myArray[j] = var2;
+                    myArray[i] = var1;
                 }
             }
-            // save the last modified index so we know not to iterate past it since all proceeding values are sorted
-            n = lastModifiedIndex;
         }
     }
 }
