@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class NumeroRomano {
     public static void main(String[] args) {
         NumeroRomano numero = new NumeroRomano();
-        String a = "";
+        String a = "cxix";
         System.out.println(numero.pasarArray(a));
     }
+    ArrayList<Integer> numbers = new ArrayList<>();
+    ArrayList<Character> letter = new ArrayList<>();
 
     public int pasarArray(String romanos) {
-        ArrayList<Character> letter = new ArrayList<>();
-        ArrayList<Integer> numbers = new ArrayList<>();
+
         romanos = romanos.toLowerCase();
         for (int i = 0; i < romanos.length(); i++) {
             letter.add(romanos.charAt(i));
@@ -22,7 +23,7 @@ public class NumeroRomano {
         if (search(letter, 'x') > 3) {
             throw new RuntimeException("No existe un numero romano con mas de 3 'X'");
         }
-        if (search(letter, 'c') > 3) {
+        if (search(letter, 'c') > 4 ) {
             throw new RuntimeException("No existe un numero romano con mas de 3 'C'");
         }
         if (search(letter, 'v') > 1) {
@@ -35,7 +36,7 @@ public class NumeroRomano {
             throw new RuntimeException("No existe un numero romano con mas de 1 'D'");
         }
         if (search(letter, 'm') > 1) {
-            throw new RuntimeException("el maximo de numeros al que llegamos es a 999");
+            throw new RuntimeException("El maximo de numeros al que llegamos es a 999");
         }
 
         for (int i = 0; i < letter.size(); i++) {
@@ -61,11 +62,14 @@ public class NumeroRomano {
                 numbers.add(1000);
             }
         }
+
         int sum = 0;
         int sum1 = 0;
+
         for (int i = 0; i < numbers.size(); i++) {
             sum += numbers.get(i);
         }
+
         for (int i = 0; i < numbers.size(); i++) {
             for (int j = i+1; j < numbers.size(); j++) {
                 if (numbers.get(j) > numbers.get(i)){
