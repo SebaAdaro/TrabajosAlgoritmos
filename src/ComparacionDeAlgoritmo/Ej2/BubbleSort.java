@@ -1,32 +1,36 @@
 package ComparacionDeAlgoritmo.Ej2;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class BubbleSort {
 
-    public List<Integer> bubbleSort(List<Integer> myArray) {
+    public int[] bubbleSort(int[] myArray) {
         int var1;
         int var2;
 
-        for (int i = 0; i < myArray.size(); i++) {
-            for (int j = i + 1; j < myArray.size(); j++) {
-                if (myArray.get(j) < myArray.get(i)) {
-                    var1 = myArray.get(i);
-                    var2 = myArray.get(j);
-                    myArray.set(i,var2);
-                    myArray.set(j,var1);
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = i + 1; j < myArray.length; j++) {
+                if (myArray[j] < myArray[i]) {
+                    var1 = myArray[i];
+                    var2 = myArray[j];
+                    myArray[i] = var2;
+                    myArray[j] = var1;
                 }
             }
         }
         return myArray;
     }
 
+    void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
     public static void main(String args[]) {
         BubbleSort ob = new BubbleSort();
-        List<Integer> list = Arrays.asList(3, 2, 7, 1, 2, 2, 3, 0, -1, 6, 8);
-        list = ob.bubbleSort(list);
+        int array[] = {64, 34, 25, 12, 22, 90, 11, 11, 12, 34};
+        array = ob.bubbleSort(array);
         System.out.println("Sorted array");
-        list.forEach(System.out::println);
+        ob.printArray(array);
     }
 }
