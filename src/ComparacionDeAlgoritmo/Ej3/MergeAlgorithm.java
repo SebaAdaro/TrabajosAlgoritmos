@@ -14,43 +14,37 @@ incrementar en 1 el índice de c. • Repetir hasta que uno de los dos arreglos 
 • Pasar el resto del otro arreglo a c.
 Se pide codificar el algoritmo merge para cualquier tipo de objetos comparables.
  */
-    public class MergeAlgorithm<T extends Comparable<? super T>> {
+public class MergeAlgorithm{
 
-        public static int[] merge1(int[] a, int[] b) {
-        int cLength = a.length + b.length;
-        int[] c = new int[cLength];
-        for (int i = 0; i < a.length; i++) {
-            c[i] = a[i];
+    public void mergeArrays(int[] arr1, int[] arr2, int n1, int n2, int[] arr3) {
+        int i = 0, j = 0, k = 0;
+        while (i < n1 && j < n2) {
+            if (arr1[i] < arr2[j])
+                arr3[k++] = arr1[i++];
+            else
+                arr3[k++] = arr2[j++];
         }
-        for (int j = 0; j < b.length; j++) {
-            c[a.length+1] = b[j];
-        }
-        bubbleSort(c);
-        return c;
-    }
-
-    public static int[] bubbleSort(int[] myArray) {
-        for (int i = 0; i < myArray.length; i++) {
-            for (int j = i + 1; j < myArray.length; j++) {
-                if (myArray[i] > myArray[j]) {
-                    //El carácter a viene antes que b alfabéticamente. Por lo tanto, el resultado es -1
-                    //El carácter b viene antes que alfabéticamente. Por lo tanto, la salida es 1
-                    //El carácter b es equivalente, por lo tanto, la salida es 0.
-                    int temp = myArray[i];
-                    myArray[i] = myArray[j];
-                    myArray[j] = temp;
-                }
-            }
-        }
-        return myArray;
+        while (i < n1)
+            arr3[k++] = arr1[i++];
+        while (j < n2)
+            arr3[k++] = arr2[j++];
     }
 
     public static void main(String[] args) {
-        int[] a = {1,10,100};
-        int[] b = {2,9,99};
-        merge1(a,b);
-        System.out.println(merge1(a,b));
+        int[] arr1 = {1, 3, 5, 7};
+        int n1 = arr1.length;
+
+        int[] arr2 = {2, 4, 6, 8};
+        int n2 = arr2.length;
+
+        int[] arr3 = new int[n1 + n2];
+
+        MergeAlgorithm mergeAlgorithm = new MergeAlgorithm();
+        mergeAlgorithm.mergeArrays(arr1, arr2, n1, n2, arr3);
+
+        System.out.println("Array after merging");
+        for (int i = 0; i < n1 + n2; i++)
+            System.out.print(arr3[i] + " ");
     }
 }
-
 
