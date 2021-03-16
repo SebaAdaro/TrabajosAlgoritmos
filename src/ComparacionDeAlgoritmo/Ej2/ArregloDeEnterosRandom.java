@@ -1,20 +1,32 @@
 package ComparacionDeAlgoritmo.Ej2;
 
-import Util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-//Generar en forma random un arreglo de números enteros para distintos valores de N
-//(siendo N el tamaño del arreglo) y comparar los tiempos para distintos valores de N.
 public class ArregloDeEnterosRandom {
-    int n;
-    static int[] myArray;
-    public static void randomArray(int n){
-        for (int i = 0; i < n; i++) {
-            myArray[i] = ((int)Math.random()*100);
-        }
-    }
 
     public static void main(String[] args) {
-        int n = Scanner.getInt("Ingrese su tamano");
+        SelectionSort selectionSort = new SelectionSort();
+        BubbleSort bubbleSort = new BubbleSort();
+        InsertionSort insertionSort = new InsertionSort();
+        List<Integer> list = Arrays.asList(3, 2, 7, 1, 2, 2, 3, 0, -1, 6, 8, 98, 95, -3, -6, -96, 1, 17, 52, 36, 8, 62, 25, 225, 5505, 5, 56, 2);
 
+        System.out.println("inicio Selection sort: ");
+        double start1 = System.currentTimeMillis();
+        selectionSort.sort(list);
+        double end1 = System.currentTimeMillis();
+        System.out.println("Fin selection sort. Tardo: " + (end1 - start1));
+
+        System.out.println("inicio Bubblesort: ");
+        double start2 = System.currentTimeMillis();
+        bubbleSort.bubbleSort(list);
+        double end2 = System.currentTimeMillis();
+        System.out.println("Fin BuubleSort. Tardo: " + (end2 - start2));
+
+        System.out.println("inicio InsertionSort: ");
+        double start3 = System.currentTimeMillis();
+        insertionSort.insertion(list);
+        double end3 = System.currentTimeMillis();
+        System.out.println("Fin InsertionSort. Tardo: " + (end2 - start2));
     }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SelectionSort {
 
-    public static void sort(List<Integer> arrayList) {
+    public void sort(List<Integer> arrayList) {
         int min;
         int place;
         for (int i = 0; i < arrayList.size(); i++) {
@@ -24,10 +24,12 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(3, 2, 7, 1, 2, 2, 3, 0, -1, 6, 8);
+        SelectionSort selectionSort = new SelectionSort();
+        List<Integer> list = Arrays.asList(3, 2, 7, 1, 2, 2, 3, 0, -1, 6, 8, 98, 95, -3, -6,
+                -96, 1, 17, 52, 36, 8, 62, 25, 225, 5505, 5, 56, 2);
         System.out.println("Old");
         list.forEach(System.out::println);
-        SelectionSort.sort(list);
+        selectionSort.sort(list);
         System.out.println("New");
         list.forEach(System.out::println);
     }
