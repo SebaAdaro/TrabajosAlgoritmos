@@ -1,8 +1,8 @@
 package ComparacionDeAlgoritmo.Ej3;
-
-
 /*
-Dados dos arreglos ordenados, a y b, construir un tercer arreglo de salida c que contenga a
+Otro problema frecuente es intercalar dos secuencias ordenadas. Este problema se conoce en
+inglés como merge. El enunciado es:
+ Dados dos arreglos ordenados, a y b, construir un tercer arreglo de salida c que contenga a
 los elementos de ambos arreglos de entrada, y esté ordenado.
 Algoritmo de merge
 • Mantener un índice para recorrer el arreglo a otro para b y otro para c.
@@ -47,4 +47,3 @@ public class MergeAlgorithm{
             System.out.print(arr3[i] + " ");
     }
 }
-
