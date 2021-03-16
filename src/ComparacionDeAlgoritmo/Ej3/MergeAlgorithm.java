@@ -1,4 +1,7 @@
 package ComparacionDeAlgoritmo.Ej3;
+
+
+
 /*
 Otro problema frecuente es intercalar dos secuencias ordenadas. Este problema se conoce en
 inglés como merge. El enunciado es:
@@ -16,34 +19,40 @@ Se pide codificar el algoritmo merge para cualquier tipo de objetos comparables.
  */
 public class MergeAlgorithm{
 
-    public void mergeArrays(int[] arr1, int[] arr2, int n1, int n2, int[] arr3) {
+    public void mergeArrays(int[] a, int[] b, int var1, int var2, int[] c) {
         int i = 0, j = 0, k = 0;
-        while (i < n1 && j < n2) {
-            if (arr1[i] < arr2[j])
-                arr3[k++] = arr1[i++];
+        while (i < var1 && j < var2) {
+            if (a[i] < b[j])
+                c[k++] = a[i++];
             else
-                arr3[k++] = arr2[j++];
+                c[k++] = b[j++];
         }
-        while (i < n1)
-            arr3[k++] = arr1[i++];
-        while (j < n2)
-            arr3[k++] = arr2[j++];
+        while (i < var1)
+            c[k++] = a[i++];
+        while (j < var2)
+            c[k++] = b[j++];
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {1, 3, 5, 7};
-        int n1 = arr1.length;
+        int[] a = {10,20,30,40};
+        int var1 = a.length;
 
-        int[] arr2 = {2, 4, 6, 8};
-        int n2 = arr2.length;
+        int[] b = {5,15,25,35};
+        int var2 = b.length;
 
-        int[] arr3 = new int[n1 + n2];
+        int[] c = new int[var1 + var2];
 
         MergeAlgorithm mergeAlgorithm = new MergeAlgorithm();
-        mergeAlgorithm.mergeArrays(arr1, arr2, n1, n2, arr3);
+        mergeAlgorithm.mergeArrays(a, b, var1, var2, c);
 
-        System.out.println("Array after merging");
-        for (int i = 0; i < n1 + n2; i++)
-            System.out.print(arr3[i] + " ");
+        printArray(c);
+    }
+
+    public static void printArray(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i) {
+            System.out.print(arr[i] + " ");
+            System.out.println();
+        }
     }
 }
