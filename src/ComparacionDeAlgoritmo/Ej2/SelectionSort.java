@@ -18,6 +18,11 @@ public class SelectionSort<T extends Comparable<? super T>> {
             }
         }
 
+
+
+
+
+
       /*  public static void main (String[]args){
             List<Integer> list = Arrays.asList(3, 2, 7, 1, 2, 2, 3, 0, -1, 6, 8);
             System.out.println("Old");
