@@ -1,5 +1,6 @@
 package ComparacionDeAlgoritmo.Ej3;
 
+
 /*
 Dados dos arreglos ordenados, a y b, construir un tercer arreglo de salida c que contenga a
 los elementos de ambos arreglos de entrada, y esté ordenado.
@@ -15,34 +16,40 @@ Se pide codificar el algoritmo merge para cualquier tipo de objetos comparables.
  */
     public class MergeAlgorithm<T extends Comparable<? super T>> {
 
-    public void merge(int[] a, int[] b) {
+        public static int[] merge1(int[] a, int[] b) {
         int cLength = a.length + b.length;
         int[] c = new int[cLength];
         for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b.length; j++) {
-                if (a[i] > b[j]) {
-                    c[i] = a[i];
-                }
-                if (a[i] <= b[j]) {
-                    c[i] = b[j];
-                }
-            }
+            c[i] = a[i];
         }
+        for (int j = 0; j < b.length; j++) {
+            c[a.length+1] = b[j];
+        }
+        bubbleSort(c);
+        return c;
     }
 
-    public void merge(int[] a, int[] b) {
-        int cLength = a.length + b.length;
-        int[] c = new int[cLength];
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b.length; j++) {
-                if (a[i] > b[j]) {
-                    c[i] = a[i];
-                }
-                if (a[i] <= b[j]) {
-                    c[i] = b[j];
+    public static int[] bubbleSort(int[] myArray) {
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = i + 1; j < myArray.length; j++) {
+                if (myArray[i] > myArray[j]) {
+                    //El carácter a viene antes que b alfabéticamente. Por lo tanto, el resultado es -1
+                    //El carácter b viene antes que alfabéticamente. Por lo tanto, la salida es 1
+                    //El carácter b es equivalente, por lo tanto, la salida es 0.
+                    int temp = myArray[i];
+                    myArray[i] = myArray[j];
+                    myArray[j] = temp;
                 }
             }
         }
+        return myArray;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1,10,100};
+        int[] b = {2,9,99};
+        merge1(a,b);
+        System.out.println(merge1(a,b));
     }
 }
 
