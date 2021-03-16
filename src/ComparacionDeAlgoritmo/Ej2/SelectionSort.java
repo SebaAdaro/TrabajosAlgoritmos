@@ -2,7 +2,7 @@ package ComparacionDeAlgoritmo.Ej2;
 
 public class SelectionSort<T extends Comparable<? super T>> {
 
-        public static int[] sortInt(int[] a){
+        public int[] sortInt(int[] a){
             for (int i = 0; i < a.length; i++) {
                 int minIndex = i;
                 for (int j = i + 1; j < a.length; j++) {

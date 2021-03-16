@@ -2,7 +2,7 @@ package ComparacionDeAlgoritmo.Ej2;
 
 public class InsertionSort<T extends Comparable < ? super T>> {
 
-    public static void insertion(int [] a){
+    public void insertion(int [] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             int aux = a[i];
