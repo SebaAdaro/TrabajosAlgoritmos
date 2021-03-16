@@ -2,7 +2,7 @@ package ComparacionDeAlgoritmo.Ej2;
 
 public class InsertionSort<T extends Comparable < ? super T>> {
 
-    public static void insertion(int [] a){
+    public void insertion(int [] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             int aux = a[i];
@@ -14,6 +14,17 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         }
     }
 
+    //main de testeo
+    public static void main(String[] args) {
+        InsertionSort insertionSort = new InsertionSort();
+        int[] array = {5,1,6,3,9,6,5};
+        insertionSort.insertion(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    //insertion de Strings
     public static void insertionCadena(String[] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
@@ -26,11 +37,12 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         }
     }
 
+    //insertion generico
     public void insertionObjetoT(T[] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             T aux = a[i];
-            while((pos > 0) && ((a[pos-1]).compareTo(aux) < 0)){
+            while((pos > 0) && (a[pos-1].compareTo(aux) < 0)){
                 a[pos] = a[pos-1];
                 pos--;
             }
