@@ -14,6 +14,17 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         }
     }
 
+    //main de testeo
+    public static void main(String[] args) {
+        InsertionSort insertionSort = new InsertionSort();
+        int[] array = {5,1,6,3,9,6,5};
+        insertionSort.insertion(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    //insertion de Strings
     public static void insertionCadena(String[] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
@@ -26,6 +37,7 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         }
     }
 
+    //insertion generico
     public void insertionObjetoT(T[] a, Comparable<T> k){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
