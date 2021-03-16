@@ -4,12 +4,17 @@ Burbujeo el algoritmo de burbujeo lo que hace es agarra el primer y segundo nume
 primero los cambia de lugar, luego lo mismo con el segundo y tercer numero etc hasta llegar hasta el ultimo del arreglo.
 
 
+
 El algoritmo de seleccion es tomar el elemento minimo del arreglo y remplazar por el primero, luego pasa a la segunda posicion
 y sigue intercambiando las posiciones de los elementos mas chicos con los siguientes.
 
 
+
 Algoritmo de Insercion
 El método de ordenación por inserción consiste en recorrer el array comenzando desde el segundo elemento hasta el final.
-Para cada elemento, se lo coloca en el lugar correcto entre todos los elementos anteriores a él, o sea, entre los elementos a su
-izquierda en el array.
+Para cada elemento, se lo coloca en el lugar correcto entre todos los elementos anteriores a él, o sea, entre los elementos a su izquierda
+ en el array.
+
+
+
 

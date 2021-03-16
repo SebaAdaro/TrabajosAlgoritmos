@@ -38,19 +38,6 @@ public class InsertionSort<T extends Comparable < ? super T>> {
     }
 
     //insertion generico
-    public void insertionObjetoT(T[] a, Comparable<T> k){
-        for (int i = 0; i < a.length; i++) {
-            int pos = i;
-            T aux = a[i];
-            while((pos > 0) && (k.compareTo( a[pos-1]) < 0)){
-                a[pos] = a[pos-1];
-                pos--;
-            }
-            a[pos] = aux;
-        }
-    }
-
-
     public void insertionObjetoT(T[] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
