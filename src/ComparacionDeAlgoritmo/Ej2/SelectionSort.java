@@ -21,26 +21,30 @@ public class SelectionSort<T extends Comparable<? super T>> {
 
     public static String[] selectionsortStrings(String[] a) {
         for (int i = 0; i < a.length; i++) {
-            int minIndex = i;
-            if (a[i + 1].compareTo(a[minIndex]) < 0) {
-                minIndex = i + 1;
+            for (int j = 0; j < a.length; j++) {
+                int minIndex = i;
+                if (a[j].compareTo(a[minIndex]) < 0) {
+                    minIndex = j;
+                }
+                String temp = a[i];
+                a[i] = a[minIndex];
+                a[minIndex] = temp;
             }
-            String temp = a[i];
-            a[i] = a[minIndex];
-            a[minIndex] = temp;
         }
         return a;
     }
 
     public void selectionSortGeneric(T[] myArray) {
         for (int i = 0; i < myArray.length; i++) {
-            int minIndex = i;
-            if (myArray[i + 1].compareTo(myArray[minIndex]) < 0) {
-                minIndex = i + 1;
+            for (int j = 0; j < myArray.length; j++) {
+                int minIndex = i;
+                if (myArray[j].compareTo(myArray[minIndex]) < 0) {
+                    minIndex = j;
+                }
+                T temp = myArray[i];
+                myArray[i] = myArray[minIndex];
+                myArray[minIndex] = temp;
             }
-            T temp = myArray[i];
-            myArray[i] = myArray[minIndex];
-            myArray[minIndex] = temp;
         }
     }
 
@@ -68,7 +72,7 @@ public class SelectionSort<T extends Comparable<? super T>> {
     //main de testeo
     public static void main(String[] args) {
         int[] array = {10, -20, 122, 10000, 767, -1, 0, 9, 11};
-        SelectionSort.selectionSortInt(array);
+        SelectionSort.selectionRecursive(array);
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
