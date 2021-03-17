@@ -1,8 +1,10 @@
+//Beltran Bulbarella, Sebastian Adaro, Josue Riera
+
 package ComparacionDeAlgoritmo.Ej2;
 
 public class InsertionSort<T extends Comparable < ? super T>> {
 
-    public void insertion(int [] a){
+    public static void insertionSortInt(int [] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             int aux = a[i];
@@ -14,18 +16,7 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         }
     }
 
-    //main de testeo
-    public static void main(String[] args) {
-        InsertionSort insertionSort = new InsertionSort();
-        int[] array = {5,1,6,3,9,6,5};
-        insertionSort.insertion(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-    }
-
-    //insertion de Strings
-    public static void insertionCadena(String[] a){
+    public static void insertionString(String[] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             String aux = a[i];
@@ -37,8 +28,7 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         }
     }
 
-    //insertion generico
-    public void insertionObjetoT(T[] a){
+    public void insertionGeneric(T[] a){
         for (int i = 0; i < a.length; i++) {
             int pos = i;
             T aux = a[i];
@@ -50,5 +40,13 @@ public class InsertionSort<T extends Comparable < ? super T>> {
         }
     }
 
+    //main de testeo
+    public static void main(String[] args) {
+        int[] array = {10, -20, 122, 10000, 767, -1, 0, 9, 11};
+        InsertionSort.insertionSortInt(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
 }
 
