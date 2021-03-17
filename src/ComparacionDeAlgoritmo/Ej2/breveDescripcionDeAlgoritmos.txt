@@ -1,17 +1,16 @@
 Beltran Bulbarella, Sebastian Adaro, Josue Riera
 
-Describir los algoritmos de selección, inserción, burbujeo...
+Burbujeo:
+El algoritmo de burbujeo observa el primer y segundo numero del arreglo. Si el segundo es menor al
+primero los cambia de lugar, luego lo mismo con el segundo y tercer numero etc hasta llegar hasta el ultimo del arreglo. Una
+vez recorrido el arreglo, inicializa de nuevo la pasada para terminar de ordenar todos sus elementos.
 
-Burbujeo el algoritmo de burbujeo lo que hace es agarra el primer y segundo numero del arreglo. Si el segundo es menor al
-primero los cambia de lugar, luego lo mismo con el segundo y tercer numero etc hasta llegar hasta el ultimo del arreglo.
+Seleccion:
+El algoritmo de Seleccion se encarga de encontrar el elemento minimo del arreglo y lo reemplaza por el primero, luego pasa a la segunda posicion
+y sigue intercambiando las posiciones de los elementos mas chicos con los siguientes hasta que la lista quede ordenada.
 
-
-El algoritmo de Seleccion es tomar el elemento minimo del arreglo y remplazar por el primero, luego pasa a la segunda posicion
-y sigue intercambiando las posiciones de los elementos mas chicos con los siguientes.
-
-
-Algoritmo de Insercion
-El método de ordenación por inserción consiste en recorrer el array comenzando desde el segundo elemento hasta el final.
-Para cada elemento, se lo coloca en el lugar correcto entre todos los elementos anteriores a él, o sea, entre los elementos a su
-izquierda en el array.
+Insercion:
+El método de ordenación por inserción consiste en recorrer el array con un indice comenzando desde el segundo elemento hasta el final.
+Para cada elemento, se lo coloca en el lugar correcto entre todos los elementos anteriores a él, es decir, recorre los elementos
+a su derecha del indice (elementos desordenados) y los ubica entre los elementos a su izquierda del indice (los ordenados).
 
