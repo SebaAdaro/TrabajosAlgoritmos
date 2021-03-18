@@ -1,42 +1,50 @@
+//Beltran Bulbarella, Sebastian Adaro, Josue Riera
+
 package ComparacionDeAlgoritmo.Ej2;
 
 public class SelectionSort<T extends Comparable<? super T>> {
 
-    public static int[] sortInt(int[] a) {
+    public static int[] selectionSortInt(int[] a) {
         for (int i = 0; i < a.length; i++) {
-            int minIndex = i;
-            if (a[i + 1] < (a[minIndex])) {
-                minIndex = i + 1;
+            for (int j = i+1; j < a.length; j++) {
+                int minIndex = i;
+                if (a[j] < (a[minIndex])) {
+                    minIndex = j;
+                }
+                int temp = a[i];
+                a[i] = a[minIndex];
+                a[minIndex] = temp;
             }
-            int temp = a[i];
-            a[i] = a[minIndex];
-            a[minIndex] = temp;
         }
         return a;
     }
 
-    public static String[] sortIntCadena(String[] a) {
+    public static String[] selectionsortStrings(String[] a) {
         for (int i = 0; i < a.length; i++) {
-            int minIndex = i;
-            if (a[i + 1].compareTo(a[minIndex]) < 0) {
-                minIndex = i + 1;
+            for (int j = 0; j < a.length; j++) {
+                int minIndex = i;
+                if (a[j].compareTo(a[minIndex]) < 0) {
+                    minIndex = j;
+                }
+                String temp = a[i];
+                a[i] = a[minIndex];
+                a[minIndex] = temp;
             }
-            String temp = a[i];
-            a[i] = a[minIndex];
-            a[minIndex] = temp;
         }
         return a;
     }
 
-    public void sort(T[] myArray) {
+    public void selectionSortGeneric(T[] myArray) {
         for (int i = 0; i < myArray.length; i++) {
-            int minIndex = i;
-            if (myArray[i + 1].compareTo(myArray[minIndex]) < 0) {
-                minIndex = i + 1;
+            for (int j = 0; j < myArray.length; j++) {
+                int minIndex = i;
+                if (myArray[j].compareTo(myArray[minIndex]) < 0) {
+                    minIndex = j;
+                }
+                T temp = myArray[i];
+                myArray[i] = myArray[minIndex];
+                myArray[minIndex] = temp;
             }
-            T temp = myArray[i];
-            myArray[i] = myArray[minIndex];
-            myArray[minIndex] = temp;
         }
     }
 
@@ -60,22 +68,13 @@ public class SelectionSort<T extends Comparable<? super T>> {
         }
         return myArray;
     }
-}
 
-     /* public static void main(String[] args) {
-        int[] a = {12,4432,5,2,1,4,6};
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(selectionRecursive(a)[i]);
+    //main de testeo
+    public static void main(String[] args) {
+        int[] array = {10, -20, 122, 10000, 767, -1, 0, 9, 11};
+        SelectionSort.selectionRecursive(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
         }
     }
 }
-*/
-
-      /*  public static void main (String[]args){
-            List<Integer> list = Arrays.asList(3, 2, 7, 1, 2, 2, 3, 0, -1, 6, 8);
-            System.out.println("Old");
-            list.forEach(System.out::println);
-            //SelectionSort.sort(list);
-            System.out.println("New");
-            list.forEach(System.out::println);
-        }*/

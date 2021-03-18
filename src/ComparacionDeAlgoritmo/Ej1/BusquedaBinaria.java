@@ -1,5 +1,5 @@
 package ComparacionDeAlgoritmo.Ej1;
-
+//Beltran Bulbarella, Sebastian Adaro, Josue Riera
 public class BusquedaBinaria {
     public <T> int BinarySearch(Comparable <T> a[], Comparable <T> k){
         int min = 0;
