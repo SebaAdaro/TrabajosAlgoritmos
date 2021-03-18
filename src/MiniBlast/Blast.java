@@ -18,17 +18,17 @@ public class Blast {
         int maxCountNumber;
 
         for (int k = 0; k < gen1.size(); k++) {
-            if (gen1.get(k).equals(gen2.get(k)) && gen1.get(k + 1).equals(gen2.get(k + 1))) {
+
+            if ((gen1.get(k).equals(gen2.get(k)) && gen1.get(k + 1).equals(gen2.get(k + 1))) || (gen1.get(k + 1).equals(gen2.get(k + 1)) && !gen1.get(k + 2).equals(gen2.get(k + 2)))) {
                 counter++;
 
-            /*} else if (gen1.get(k).equals(gen2.get(k)) && !(gen1.get(k).equals(gen2.get(k + 1)))) {
-                counter++;
-            }*/
+                if (!gen1.get(k + 2).equals(gen2.get(k + 2))) {
+                    counter++;
+                }
             }
-            maxCountNumber = counter;
+        }
 
-
-        } return gen1.size() / counter;
+        return counter / gen1.size();
     }
 
     public void check() {
