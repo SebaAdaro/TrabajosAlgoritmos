@@ -4,26 +4,24 @@ import java.util.List;
 
 public class Blast {
 
-    public double toCheck(List<Character> query, List<Character> comp1) {
+    public double toCheck(List<Character> gen1, List<Character> gen2) {
         int counter = 0;
         double maxCountNumber;
 
-        for (int k = 0; k < query.size(); k++) {
+        for (int k = 0; k < gen1.size(); k++) {
 
-            if ((query.get(k).equals(comp1.get(k)) && query.get(k + 1).equals(comp1.get(k + 1))) || (query.get(k + 1).equals(comp1.get(k + 1)) && !query.get(k + 2).equals(comp1.get(k + 2)))) {
+            if ((gen1.get(k).equals(gen2.get(k)) && gen1.get(k + 1).equals(gen2.get(k + 1))) || (gen1.get(k + 1).equals(gen2.get(k + 1)) && !gen1.get(k + 2).equals(gen2.get(k + 2)))) {
                 counter++;
 
-                if (!query.get(k + 2).equals(comp1.get(k + 2))) {
+                if (!gen1.get(k + 2).equals(gen2.get(k + 2))) {
                     counter++;
                 }
             }
         }
 
         maxCountNumber = counter;
-        return maxCountNumber;
-        //return (maxCountNumber / query.size()) * 100;
+        return (maxCountNumber / gen1.size()) * 100;
     }
-
 
 //    public void check() {
 //        int counter = 0;
