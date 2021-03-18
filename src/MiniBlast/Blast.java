@@ -15,14 +15,20 @@ public class Blast {
 
     public int toCheck() {
         int counter = 0;
+        int maxCountNumber;
 
         for (int k = 0; k < gen1.size(); k++) {
-            if (gen1.get(k).equals(gen2.get(k))) {
+            if (gen1.get(k).equals(gen2.get(k)) && gen1.get(k + 1).equals(gen2.get(k + 1))) {
                 counter++;
-            }
-        }
 
-        return gen1.size() / counter;
+            /*} else if (gen1.get(k).equals(gen2.get(k)) && !(gen1.get(k).equals(gen2.get(k + 1)))) {
+                counter++;
+            }*/
+            }
+            maxCountNumber = counter;
+
+
+        } return gen1.size() / counter;
     }
 
     public void check() {
