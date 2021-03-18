@@ -1,19 +1,10 @@
 package MiniBlast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Blast {
 
-    List<Character> gen1;
-    List<Character> gen2;
-
-    public Blast(List<Character> gen1, List<Character> gen2) {
-        this.gen1 = gen1;
-        this.gen2 = gen2;
-    }
-
-    public double toCheck() {
+    public double toCheck(List<Character> gen1, List<Character> gen2) {
         int counter = 0;
         double maxCountNumber;
 
@@ -28,24 +19,25 @@ public class Blast {
             }
         }
 
-        return counter / gen1.size();
+        maxCountNumber = counter;
+        return (maxCountNumber / gen1.size()) * 100;
     }
 
-    public void check() {
-        int counter = 0;
-
-        List<Character> theEquals = new ArrayList<>();
-
-        for (int i = 0; i < gen1.size(); i++) {
-            for (int j = 0; j < gen2.size(); j++) {
-                if (gen1.get(i).equals(gen2.get(j))) {
-                    counter++;
-                    i++;
-                }
-                if (gen1.get(i).equals(gen2.get(j))) {
-                    counter++;
-                }
-            }
-        }
-    }
+//    public void check() {
+//        int counter = 0;
+//
+//        List<Character> theEquals = new ArrayList<>();
+//
+//        for (int i = 0; i < gen1.size(); i++) {
+//            for (int j = 0; j < gen2.size(); j++) {
+//                if (gen1.get(i).equals(gen2.get(j))) {
+//                    counter++;
+//                    i++;
+//                }
+//                if (gen1.get(i).equals(gen2.get(j))) {
+//                    counter++;
+//                }
+//            }
+//        }
+//    }
 }
