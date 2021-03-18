@@ -1,50 +1,54 @@
 package MiniBlast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Blast {
 
-    public static double toCheck(List<Character> gen1, List<Character> gen2) {
+    public static double check(Character[] gen1, Character[] gen2) {
         double counter = 0;
-        for (int k = 0; k < gen1.size()-1; k++) {
-            if ((gen1.get(k).equals(gen2.get(k)) && gen1.get(k + 1).equals(gen2.get(k + 1))) || (gen1.get(k + 1).equals(gen2.get(k + 1)) && !gen1.get(k + 2).equals(gen2.get(k + 2)))) {
-                counter++;
+        double n = gen1.length;
 
-                if (!gen1.get(k + 2).equals(gen2.get(k + 2))) {
-                    counter++;
-                }
+        for (int i = 0; i < gen1.length; i++) {
+            if (gen1[i].equals((gen2[i]))) {
+                counter++;
             }
         }
-        return (counter / gen1.size()) * 100;
+        return ((counter / n) * 100);
     }
 
-    public static double check(List<Character> gen1, List<Character> gen2) {
+    public static double checkString(String gen1, String gen2) {
         double counter = 0;
-        if (gen1.size() == gen2.size()) {
-            for (int i = 0; i < gen1.size(); i++) {
-                if (gen1.get(i).equals(gen2.get(i))) {
-                    counter++;
-                }
+        int n1 = gen1.length();
+        int n2 = gen2.length();
+
+        char[] gen11 = new char[n1];
+        char[] gen21 = new char[n2];
+
+        for (int i = 0; i < gen1.length(); i++) {//transforma el String en un array de char para compararlo
+            gen11[i] = gen1.charAt(i);
+        }
+
+        for (int i = 0; i < gen2.length(); i++) {//transforma el String en un array de char para compararlo
+            gen21[i] = gen2.charAt(i);
+        }
+
+        for (int i = 0; i < gen11.length; i++) { //realiza la comparacion
+            if (gen11[i] == (gen21[i])) {
+                counter++;
             }
         }
-        return (counter / gen1.size()) * 100;
+        return ((counter / n1) * 100);
     }
 
     public static void main(String[] args) {
-        List<Character> a = new ArrayList<>();
-        a.add('A');
-        a.add('A');
-        a.add('A');
-        a.add('A');
+        Character[] a = {'a', 'c', 'c', 'd'};
+        Character[] b = {'a', 'b', 'c', 'd'};
 
-        List<Character> b = new ArrayList<>();
-        a.add('A');
-        a.add('A');
-        a.add('A');
-        a.add('A');
+        String gen1 = "cgtacctgatt";
+        String gen2 = "cttacctgaaa";
 
-        System.out.println(Blast.toCheck(a,b));
+        System.out.println("Strings");
+        System.out.println(Blast.checkString(gen1, gen2) + "%");
+        System.out.println("\nCharacter");
+        System.out.println(Blast.check(a, b) + "%");
 
     }
 }
