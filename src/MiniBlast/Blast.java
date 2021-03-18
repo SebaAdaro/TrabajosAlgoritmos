@@ -5,8 +5,7 @@ import java.util.List;
 public class Blast {
 
     public double toCheck(List<Character> gen1, List<Character> gen2) {
-        int counter = 0;
-        double maxCountNumber;
+        double counter = 0;
 
         for (int k = 0; k < gen1.size(); k++) {
 
@@ -18,26 +17,19 @@ public class Blast {
                 }
             }
         }
-
-        maxCountNumber = counter;
-        return (maxCountNumber / gen1.size()) * 100;
+        return (counter / gen1.size()) * 100;
     }
 
-//    public void check() {
-//        int counter = 0;
-//
-//        List<Character> theEquals = new ArrayList<>();
-//
-//        for (int i = 0; i < gen1.size(); i++) {
-//            for (int j = 0; j < gen2.size(); j++) {
-//                if (gen1.get(i).equals(gen2.get(j))) {
-//                    counter++;
-//                    i++;
-//                }
-//                if (gen1.get(i).equals(gen2.get(j))) {
-//                    counter++;
-//                }
-//            }
-//        }
-//    }
+    public double check(List<Character> gen1, List<Character> gen2) {
+        double counter = 0;
+
+        if (gen1.size() == gen2.size()) {
+            for (int i = 0; i < gen1.size(); i++) {
+                if (gen1.get(i).equals(gen2.get(i))) {
+                    counter++;
+                }
+            }
+        }
+        return (counter / gen1.size()) * 100;
+    }
 }
