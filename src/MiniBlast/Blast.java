@@ -13,9 +13,9 @@ public class Blast {
         this.gen2 = gen2;
     }
 
-    public int toCheck() {
+    public double toCheck() {
         int counter = 0;
-        int maxCountNumber;
+        double maxCountNumber;
 
         for (int k = 0; k < gen1.size(); k++) {
 
