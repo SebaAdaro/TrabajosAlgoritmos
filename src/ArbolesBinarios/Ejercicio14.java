@@ -19,4 +19,22 @@ package ArbolesBinarios;
             }
             return sum;
         }
+
+
+        public int elementSum3(BinaryTree<Integer> a){
+            if(!(a.isEmpty())){
+                sum += a.getRoot();
+            }
+            if(!a.getLeft().isEmpty()){
+                if (elementSum(a.getLeft()) % 3 == 0) {
+                    sum += elementSum(a.getLeft());
+                }
+            }
+            if(!a.getLeft().isEmpty()) {
+                if (elementSum(a.getLeft()) % 3 == 0) {
+                    sum += elementSum(a.getLeft());
+                }
+            }
+            return sum;
+        }
 }
