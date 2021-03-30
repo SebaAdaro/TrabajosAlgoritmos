@@ -20,10 +20,11 @@ package ArbolesBinarios;
             return sum;
         }
 
-
         public int elementSum3(BinaryTree<Integer> a){
-            if(!(a.isEmpty())){
-                sum += a.getRoot();
+            if(!(a.isEmpty())) {
+                if (a.getRoot() % 3 == 0) {
+                    sum += a.getRoot();
+                }
             }
             if(!a.getLeft().isEmpty()){
                 if (elementSum(a.getLeft()) % 3 == 0) {
