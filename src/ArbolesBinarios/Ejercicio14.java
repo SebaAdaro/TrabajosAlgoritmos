@@ -27,14 +27,10 @@ package ArbolesBinarios;
                 }
             }
             if(!a.getLeft().isEmpty()){
-                if (elementSum(a.getLeft()) % 3 == 0) {
                     sum += elementSum(a.getLeft());
-                }
             }
             if(!a.getLeft().isEmpty()) {
-                if (elementSum(a.getLeft()) % 3 == 0) {
                     sum += elementSum(a.getLeft());
-                }
             }
             return sum;
         }
