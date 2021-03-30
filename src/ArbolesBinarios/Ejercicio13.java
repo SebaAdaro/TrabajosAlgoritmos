@@ -11,7 +11,7 @@ public class Ejercicio13<T> {
             return 1 + size(a.getLeft()) + size(a.getRight());
     }
 
-    public int leavesAux(BinaryTree a, int count) {
+    public int leavesAux(BinaryTree<T> a, int count) {
         int counter = count;
         if (a.isEmpty()) {
             counter++;
