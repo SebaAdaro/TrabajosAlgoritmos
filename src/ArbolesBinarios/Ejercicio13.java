@@ -36,8 +36,12 @@ public class Ejercicio13<T> {
             return ocurrencias(a.getLeft(), o) + ocurrencias(a.getRight(), o);
     }
 
-    public int elementsInLevel(BinaryTree<T> a, int b) {
-        return 0;
+    public int elementsInLevel(BinaryTree<T> a, int level) {
+        if (level>=1){
+            return elementsInLevel(a.getLeft(),level-1)+elementsInLevel(a.getRight(),level-1);
+        } else{
+            return a.getRoot() == null ? 0:1;
+        }
     }
 
     public int height(BinaryTree<T> a) {
