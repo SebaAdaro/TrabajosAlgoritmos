@@ -4,9 +4,10 @@ package ArbolesBinarios;
         ii) la suma de sus elementos que son múltiplos de 3*/
 
     public class Ejercicio14<T> {
-        private int sum;
 
-        public int elementSum(BinaryTree<Integer> a){
+        private int sum;
+        public int elementSum
+                (BinaryTree<Integer> a){
             if(!(a.isEmpty())){
                 sum += a.getRoot();
             }
