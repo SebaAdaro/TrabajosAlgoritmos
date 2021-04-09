@@ -10,7 +10,7 @@ public class Main {
             int selection = Scanner.getInt("Ingrese la operacion que desea hacer: ");
             switch (selection) {
                 case 1:
-                    Tablero.chooseNextStep();
+//                    Tablero.chooseNextStep();todo comento porque no implementamos un metodo y que no tire error
                     break;
                 case 2:
 
