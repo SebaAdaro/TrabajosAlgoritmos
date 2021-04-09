@@ -34,4 +34,8 @@ package ArbolesBinarios;
             }
             return sum;
         }
+
+        public boolean equals(BinaryTree<T> a1, BinaryTree<T> a2){
+            return false;
+        }
 }
