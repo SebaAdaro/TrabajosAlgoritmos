@@ -1,55 +1,50 @@
 package PilasYColas;
 
 
-public class StaticQueue <T> implements QueueInterface<T>{
+public class StaticQueue<T> implements QueueInterface<T> {
     private T[] array;
-    private int front;
-    private int back;
-    private int size;
+    private int front, size, back;
+
 
     public StaticQueue() {
         array = (T[]) new Object[10];
-        front = -1;
-        back = -1;
-        size = 0;
+        front = 0;
+        back = 0;
+        size = 0;  //todo change amount for size
     }
 
     @Override
     public void enqueue(T element) {
-        if(isEmpty()){
-            back = 0;
-            front = 0;
-        }else{
-            manageBack();
-            ++back;
+        if (!isFull()) {
+            size++;
+            array[back - 1] = element;
+        } else {
+            grow();
+            enqueue(element);
         }
-        array[back] = element;
-        ++size;
     }
 
-    private void manageBack() {
-        if(back+1 == size || back+1 == front){
-            enlargeArray();
+    private boolean isFull() {
+        return array.length == size;
+    }
+
+    private void increment() {
+        if (back != array.length) {
+            back++;
+        } else if (size < array.length) {
+            back = 1;
         }
     }
 
     @Override
     public T dequeue() throws IsEmptyException {
-        if(!isEmpty()){
+        if (!isEmpty()) {
             T temp = array[front];
-            manageFront();
-            ++front;
-            --size;
+            front++;
+            size++;
             return temp;
-        }else{
+        } else {
             throw new IsEmptyException();
-        }
-
-    }
-
-    private void manageFront() {
-        if(front+1 == array.length){
-            front = 0;
         }
     }
 
@@ -63,16 +58,18 @@ public class StaticQueue <T> implements QueueInterface<T>{
         return size;
     }
 
-    private void enlargeArray(){ //cambiar para que lo copie en orden
-        T[] arrayclone = array;
-        array = (T[]) new Object[arrayclone.length +5];
-        for (int i = 0; i < arrayclone.length; i++) {
-            array[i]= arrayclone[front];
-            if(front != arrayclone.length-1){
-                ++front;
-            }else{
-                front = 0;
-            }
+    private void grow() { //cambiar para que lo copie en orden
+        T[] newArray = (T[]) new Object[array.length * 2];
+        int index = 0;
+        for (int i = front; i < array.length; i++) {
+            newArray[index++] = array[i];
         }
+        for (int i = back - 1; i < front; i++) {
+            newArray[index++] = array[i];
+        }
+        front = 0;
+        back = array.length;
+        array = newArray;
     }
 }
+
