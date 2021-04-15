@@ -9,8 +9,8 @@ public class StaticQueue<T> implements QueueInterface<T> {
 
     public StaticQueue() {
         array = (T[]) new Object[10];
-        front = -1;
-        back = -1;
+        front = 0;
+        back = 0;
         size = 0;
     }
 

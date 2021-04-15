@@ -1,8 +1,11 @@
 package NuevoMovimientoDeCaballo;
 
 import PilasYColas.DinamicStack;
+import PilasYColas.IsEmptyException;
 
 public class Board {
+    private int movement;
+    private Object[] array;
     private Position[][] positions = new Position[8][8];
     public String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H"};
 
@@ -23,17 +26,17 @@ public class Board {
         for (int i = 0; i < 8; i++) {
             int X = getLetterIndex(position.getLetter()) + x[i];
             int Y = position.getNumber() + y[i];
-            if(X >= 0 && X <= 7 && Y>= 0 && Y <= 7){
-                posibleMoves.stack(positions[X][Y]);
+            if (X >= 0 && X <= 7 && Y >= 0 && Y <= 7) {
+                stackBoard.stack(positions[X][Y]);
             }
         }
-        return posibleMoves;
+        return stackBoard;
     }
 
     private int getLetterIndex(String letter) {
         int index = 0;
         for (int i = 0; i < letters.length; i++) {
-            if(letter.equals(letters[i])){
+            if (letter.equals(letters[i])) {
                 index = i;
             }
         }
