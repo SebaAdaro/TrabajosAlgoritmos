@@ -8,8 +8,9 @@ public class Main {
 
         while (true) {
             System.out.println("You are in this position: " + position);
-            System.out.println("1. Make the next jump\n2. Show the Stacks contents\n 3. Leave");
+            System.out.println("1. Make the next jump\n2. Show the Stacks contents\n3. Leave\n");
             int selection = Scanner.getInt("Choose the option you want: ");
+            System.out.println();
             Board board = new Board();
             switch (selection) {
                 case 1:
@@ -17,7 +18,7 @@ public class Main {
                     position = pos1;
 
                 case 2:
-                    board.showStack();
+                    System.out.print(board.showStack());
                     break;
                 case 3:
                     System.exit(0);

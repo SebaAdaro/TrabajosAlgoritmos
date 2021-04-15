@@ -7,8 +7,8 @@ public class Board {
     private int movement = 0;
     private DinamicStack stackMovements = new DinamicStack();
     private Position[][] positions = new Position[8][8];
-    public String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H"};
-    private DinamicStack stackBoard;
+    private String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H"};
+    private DinamicStack stackBoard = new DinamicStack();
 
     public Board() {
         for (int i = 0; i < 8; i++) {
@@ -48,11 +48,10 @@ public class Board {
 //    }
 
     public DinamicStack horseMove(Position position) {
+        int[] x = {-2, -1, 2, 2, 1, -1, -2, 1};
+        int[] y = {1, 2, 1, -1, -2, -2, -1, 2};
 
-        int[] x = {1, -1, 2, 2, 1, -1, -2, -2};
-        int[] y = {2, 2, 1, -1, -2, -2, -1, 1};
-
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < x.length; i++) {
             int X = getLetterIndex(position.getLetter()) + x[i];
             int Y = position.getNumber() + y[i];
             if (X > 0 && X < 8 && Y > 0 && Y < 8) {
@@ -71,5 +70,6 @@ public class Board {
         }
         return index;
     }
+
 }
 
