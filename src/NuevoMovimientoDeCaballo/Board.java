@@ -16,6 +16,31 @@ public class Board {
             }
         }
     }
+    //hola
+
+    public Object makeNextMove(Position position) throws IsEmptyException {
+        DinamicStack pila = horseMove(position);
+        Object position1 = pila.peek();
+
+        try {
+            array[movement] = position1;
+            movement++;
+            pila.pop();
+
+        } catch (IsEmptyException e) {
+            e.getMessage();
+        }
+        return position1;
+    }
+
+
+    public void showStack() {
+        StringBuilder track = new StringBuilder(" " + "_ " + " ");
+        for (int i = 0; i < array.length; i++) {
+            track.append(array[i]);
+        }
+        System.out.println(track);
+    }
 
     public DinamicStack horseMove(Position position) {
         DinamicStack posibleMoves = new DinamicStack();
