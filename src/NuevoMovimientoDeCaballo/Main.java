@@ -13,8 +13,9 @@ public class Main {
             Board board = new Board();
             switch (selection) {
                 case 1:
-                    board.makeNextMove(position);
-                    break;
+                    Object pos1 = board.makeNextMove((Position) position);
+                    position = pos1;
+
                 case 2:
                     board.showStack();
                     break;
