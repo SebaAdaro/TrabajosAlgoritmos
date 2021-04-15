@@ -8,6 +8,7 @@ public class Board {
     private Object[] array;
     private Position[][] positions = new Position[8][8];
     public String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H"};
+    private DinamicStack stackBoard;
 
     public Board() {
         for (int i = 0; i < positions.length; i++) {
@@ -43,7 +44,6 @@ public class Board {
     }
 
     public DinamicStack horseMove(Position position) {
-        DinamicStack posibleMoves = new DinamicStack();
 
         int[] x = {1, -1, 2, 2, 1, -1, -2, -2};
         int[] y = {2, 2, 1, -1, -2, -2, -1, 1};
