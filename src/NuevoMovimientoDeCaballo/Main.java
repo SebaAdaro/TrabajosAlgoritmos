@@ -23,7 +23,7 @@ public class Main {
                 case 3:
                     System.exit(0);
                 default:
-                    System.out.println("El numero ingresado no corresponde a una funcion, porfavor ingrese nuevamente un numero");
+                    System.out.println("The number entered does not correspond to a function, please enter a number again");
             }
         }
     }

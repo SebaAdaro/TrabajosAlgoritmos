@@ -4,11 +4,10 @@ import PilasYColas.DinamicStack;
 import PilasYColas.IsEmptyException;
 
 public class Board {
-    private int movement = 0;
-    private DinamicStack stackMovements = new DinamicStack();
     private Position[][] positions = new Position[8][8];
     private String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H"};
-    private DinamicStack stackBoard = new DinamicStack();
+    private DynamicStack stackMovements = new DynamicStack();
+    private DynamicStack testStack = new DynamicStack();
 
     public Board() {
         for (int i = 0; i < 8; i++) {
@@ -27,7 +26,7 @@ public class Board {
         } catch (IsEmptyException e) {
             e.getMessage();
         }
-        return position1;
+        return stack.peek();
     }
 
     public String showStack() throws IsEmptyException {
@@ -70,6 +69,5 @@ public class Board {
         }
         return index;
     }
-
 }
 
