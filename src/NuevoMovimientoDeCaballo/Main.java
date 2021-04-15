@@ -1,24 +1,28 @@
 package NuevoMovimientoDeCaballo;
+
 import PilasYColas.IsEmptyException;
 import Util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IsEmptyException {
-        Object position = new Position("A",1);
-
+        Object position = new Position("A", 1);
+        int cant = 3;
         while (true) {
             System.out.println("You are in this position: " + position);
             System.out.println("1. Make the next jump\n2. Show the Stacks contents\n3. Leave\n");
             int selection = Scanner.getInt("Choose the option you want: ");
+
             System.out.println();
+
+            MoveHorse moveHorse = new MoveHorse(cant, (Position) position);
             Board board = new Board();
             switch (selection) {
                 case 1:
-                    Object pos1 = board.makeNextMove((Position) position);
-                    position = pos1;
-
+                    position = board.makeNextMove((Position) position);
+                    moveHorse.fillStacks(board.horseMove((Position) position), cant, ((Position) position).getLetter() + ((Position) position).getNumber());
+                    break;
                 case 2:
-                    System.out.print(board.showStack());
+                    moveHorse.play();
                     break;
                 case 3:
                     System.exit(0);

@@ -1,6 +1,6 @@
 package PilasYColas;
 
-public class DinamicStack<T> implements StackInterface<T> {
+public class DynamicStack<T> implements StackInterface<T> {
     private int size;
     private Node tope;
 

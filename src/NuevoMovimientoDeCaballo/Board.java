@@ -1,6 +1,6 @@
 package NuevoMovimientoDeCaballo;
 
-import PilasYColas.DinamicStack;
+import PilasYColas.DynamicStack;
 import PilasYColas.IsEmptyException;
 
 public class Board {
@@ -18,35 +18,21 @@ public class Board {
     }
 
     public Object makeNextMove(Position position) {
-        DinamicStack stack = horseMove(position);
-        stackMovements.stack(horseMove(position));
-        Object position1 = stack.peek();
-        try {
-            stack.pop();
-        } catch (IsEmptyException e) {
-            e.getMessage();
+        DynamicStack stack = horseMove(position);
+        for (int i = 0; i < stack.size(); i++) {
+            testStack.stack(stack.peek());
+            try {
+                stack.pop();
+            } catch (IsEmptyException e) {
+                e.printStackTrace();
+            }
         }
         return stack.peek();
     }
 
-    public String showStack() throws IsEmptyException {
-        String text = "-";
-        for (int i = 0; i < stackMovements.size(); i++) {
-            text += stackMovements.peek() + "-";
-            stackMovements.pop();
-        }
-        return text;
-    }
-//
-//    public void showStack() {
-//        String track = "";
-//        for (int i = 0; i < array.length; i++) {
-//            track += array[i] + " - ";
-//        }
-//        System.out.println(track);
-//    }
+    public DynamicStack horseMove(Position position) {
+        DynamicStack possiblePosition = new DynamicStack();
 
-    public DinamicStack horseMove(Position position) {
         int[] x = {-2, -1, 2, 2, 1, -1, -2, 1};
         int[] y = {1, 2, 1, -1, -2, -2, -1, 2};
 
@@ -54,10 +40,10 @@ public class Board {
             int X = getLetterIndex(position.getLetter()) + x[i];
             int Y = position.getNumber() + y[i];
             if (X > 0 && X < 8 && Y > 0 && Y < 8) {
-                stackBoard.stack(positions[X][Y]);
+                possiblePosition.stack(positions[X][Y]);
             }
         }
-        return stackBoard;
+        return possiblePosition;
     }
 
     private int getLetterIndex(String letter) {
