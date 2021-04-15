@@ -4,8 +4,9 @@ import Util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IsEmptyException {
+        Object position = new Position("A",1);
+
         while (true) {
-            Position position = new Position("A",1);
             System.out.println("You are in this position: " + position);
             System.out.println("1. Make the next jump\n2. Show the Stacks contents\n 3. Leave");
             int selection = Scanner.getInt("Choose the option you want: ");
