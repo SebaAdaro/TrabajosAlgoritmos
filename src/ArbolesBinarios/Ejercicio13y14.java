@@ -70,19 +70,12 @@ public class Ejercicio13y14<T> {
 
     //Ejercicio14:
 
-    public int elementSum
-            (BinaryTree<Integer> a) {
-        if (!(a.isEmpty())) {
-            sum += a.getRoot();
-        }
-        if (!a.getLeft().isEmpty()) {
-            sum += elementSum(a.getLeft());
-        }
-        if (!a.getLeft().isEmpty()) {
-            sum += elementSum(a.getLeft());
-        }
-        return sum;
+    public int elementSum(BinaryTree<Integer> a) {
+        if (a.isEmpty())
+            return 0;
+        return a.getRoot() + elementSum(a.getRight()) + elementSum(a.getLeft());
     }
+
 
     public int elementSum3(BinaryTree<Integer> a) {
         if (a.isEmpty())
