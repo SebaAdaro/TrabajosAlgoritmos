@@ -166,9 +166,8 @@ public class Ejercicio13y14<T> {
 
     }
 
-
     public boolean ocurreArbin(BinaryTree<T> a, BinaryTree<T> b) {
-        if (b.isEmpty()) {
+        if (a.isEmpty()) {
             return false;
         }
         if (!a.getLeft().isEmpty()) {
