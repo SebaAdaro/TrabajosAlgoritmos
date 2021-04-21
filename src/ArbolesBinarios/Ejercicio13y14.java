@@ -5,11 +5,9 @@ import java.util.ArrayList;
 public class Ejercicio13y14<T> {
 
     //Ejercicio13:
-
-    private int sum;
     private int height;
 
-    public static int size(BinaryTree a) {
+    public int size(BinaryTree a) {
         if (a.isEmpty())
             return 0;
         else
@@ -41,11 +39,17 @@ public class Ejercicio13y14<T> {
     }
 
     public int elementsInLevel(BinaryTree<T> a, int level) {
-        if (level >= 1) {
+        if (a.isEmpty())
+            return 0;
+        if (level == 0)
+            return 1;
+        return elementsInLevel(a.getLeft(), level - 1) + elementsInLevel(a.getRight(), level - 1);
+        /*
+        if (level > 1) {
             return elementsInLevel(a.getLeft(), level - 1) + elementsInLevel(a.getRight(), level - 1);
         } else {
             return a.getRoot() == null ? 0 : 1;
-        }
+        }*/
     }
 
     public int height(BinaryTree<T> a) {
@@ -81,18 +85,12 @@ public class Ejercicio13y14<T> {
     }
 
     public int elementSum3(BinaryTree<Integer> a) {
-        if (!(a.isEmpty())) {
-            if (a.getRoot() % 3 == 0) {
-                sum += a.getRoot();
-            }
+        if (a.isEmpty())
+            return 0;
+        if(a.getRoot() % 3 == 0){
+            return a.getRoot() + elementSum3(a.getRight()) + elementSum3(a.getLeft());
         }
-        if (!a.getLeft().isEmpty()) {
-            sum += elementSum3(a.getLeft());
-        }
-        if (!a.getLeft().isEmpty()) {
-            sum += elementSum3(a.getLeft());
-        }
-        return sum;
+        return  elementSum3(a.getRight()) + elementSum3(a.getLeft());
     }
 
     public boolean equals(BinaryTree<T> a, BinaryTree<T> b) {
@@ -143,7 +141,7 @@ public class Ejercicio13y14<T> {
         if (a.isEmpty()) {
             return false;
         }
-        return complete(a) && elementsInLevel(a, h) == Math.pow(2, h);
+        return elementsInLevel(a, h) == Math.pow(2, h);
     }
 
     public boolean stable(BinaryTree<Integer> a) {
@@ -180,11 +178,11 @@ public class Ejercicio13y14<T> {
         if (b.isEmpty()) {
             return false;
         }
-        if (!b.getLeft().isEmpty()) {
-            ocurreArbin(a, b.getLeft());
+        if (!a.getLeft().isEmpty()) {
+            return ocurreArbin(a.getLeft(), b);
         }
-        if (!b.getRight().isEmpty()) {
-            ocurreArbin(a, b.getRight());
+        if (!a.getRight().isEmpty()) {
+            return ocurreArbin(a.getRight(), b);
         }
         return true;
     }
