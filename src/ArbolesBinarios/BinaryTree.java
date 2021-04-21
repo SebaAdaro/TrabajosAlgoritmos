@@ -20,7 +20,6 @@ public class BinaryTree<T> {
         return root == null;
     }
 
-
     public T getRoot(){
         return root.dato;
     }
