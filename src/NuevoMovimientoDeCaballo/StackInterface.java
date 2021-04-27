@@ -1,4 +1,4 @@
-package PilasYColas;
+package NuevoMovimientoDeCaballo;
 
 public interface StackInterface<T> {
 

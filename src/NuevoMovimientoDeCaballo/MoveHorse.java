@@ -1,6 +1,5 @@
 package NuevoMovimientoDeCaballo;
 
-import PilasYColas.IsEmptyException;
 import PilasYColas.DynamicStack;
 
 public class MoveHorse {

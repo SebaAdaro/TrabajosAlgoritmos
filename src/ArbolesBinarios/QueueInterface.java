@@ -1,6 +1,6 @@
 package ArbolesBinarios;
 
-import PilasYColas.IsEmptyException;
+import NuevoMovimientoDeCaballo.IsEmptyException;
 
 public interface QueueInterface<T> {
 

@@ -1,4 +1,4 @@
-package PilasYColas;
+package NuevoMovimientoDeCaballo;
 
 public class IsEmptyException extends Exception {
     public IsEmptyException() {

@@ -1,5 +1,8 @@
 package PilasYColas;
 
+import NuevoMovimientoDeCaballo.IsEmptyException;
+import NuevoMovimientoDeCaballo.StackInterface;
+
 public class StaticStack<T> implements StackInterface<T> {
     private Object[] queue;
     private int top = -1;
