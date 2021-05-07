@@ -1,7 +1,6 @@
 package NuevoMovimientoDeCaballo;
 
 import PilasYColas.DynamicStack;
-import PilasYColas.IsEmptyException;
 
 public class Board {
     private Position[][] positions = new Position[8][8];

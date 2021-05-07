@@ -1,6 +1,8 @@
 package PilasYColas;
 
 
+import NuevoMovimientoDeCaballo.IsEmptyException;
+
 public class StaticQueue<T> implements QueueInterface<T> {
     private T[] array;
     private int front;

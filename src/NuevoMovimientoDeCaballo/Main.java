@@ -1,6 +1,5 @@
 package NuevoMovimientoDeCaballo;
 
-import PilasYColas.IsEmptyException;
 import Util.Scanner;
 
 public class Main {

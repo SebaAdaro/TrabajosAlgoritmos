@@ -1,5 +1,7 @@
 package PilasYColas;
 
+import NuevoMovimientoDeCaballo.IsEmptyException;
+
 public class DynamicQueue<T> implements QueueInterface<T> {
     private Node back;
     private Node front;

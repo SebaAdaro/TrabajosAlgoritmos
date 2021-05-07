@@ -1,5 +1,8 @@
 package PilasYColas;
 
+import NuevoMovimientoDeCaballo.IsEmptyException;
+import NuevoMovimientoDeCaballo.StackInterface;
+
 public class DynamicStack<T> implements StackInterface<T> {
     private int size;
     private Node tope;
